@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consumir api</title>
+    <link rel="stylesheet" href="initial.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="title"></div>
+        <div class="grid">
+          <h1>Dados da api</h1>
+        </div>
+      </div>
+    </section>
+    <script>
+      function addToMyHtml(data) {}
+
+      fetch("http://example.com/movies.json")
+        .then(response => response.json())
+        .then(data => console.log(data));
+    </script>
+  </body>
+</html>
