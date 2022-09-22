@@ -1,35 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Consumir api</title>
+    <title>Consumir-Api</title>
     <link rel="stylesheet" href="initial.css" />
   </head>
   <body>
-    <section>
-      <div class="container">
-        <div class="title"></div>
-        <div class="grid">
-          <h1>Dados da api</h1>
-
-          <div id="app"></div>
+    <main>
+      <video autoplay muted loop id="myVideo">
+        <source src="rain.mp4" type="video/mp4" />
+      </video>
+      <section>
+        <div class="container">
+          <div class="kanye">
+            <img src="kaney.jpg" alt="" />
+          </div>
+          <div class="quote">
+            <div class="about-kaney">
+              <p>
+                <strong>Ye</strong>, mais conhecido como
+                <strong>Kanye West</strong>, é um rapper, compositor, produtor
+                musical, diretor de arte e estilista americano, nativo de
+                Atlanta, Geórgia.
+              </p>
+            </div>
+            <div id="app"></div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
     <script>
       let app = document.querySelector("#app");
 
       function displayResponse(data) {
-        for (let item in data) {
-          console.log(item);
-        }
+        app.innerText = data;
       }
 
-      fetch("http://example.com/movies.json")
+      fetch("https://api.kanye.rest")
         .then(response => response.json())
-        .then(data => displayResponse(data));
+        .then(data => displayResponse(data.quote));
     </script>
   </body>
 </html>
