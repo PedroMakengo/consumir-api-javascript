@@ -99,4 +99,8 @@ section {
     height: 1px;
     background: rgb(3, 10, 49);
   }
+
+  #app {
+    padding: 0 3rem;
+  }
 }
